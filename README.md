@@ -1,10 +1,12 @@
 Leaflet plugins
 ============
 
+Leaflet Google Maps API demo From [https://github.com/shramov/leaflet-plugins](https://github.com/shramov/leaflet-plugins).
+
 What ?
 ------
 
-Google.js tile provider Leaflet plugin from [https://github.com/shramov/leaflet-plugins](https://github.com/shramov/leaflet-plugins) (many more providers/demos available at the repo above):
+Google.js tile provider Leaflet plugin demo:
 
  - Google Provider Usage (`layer/tile`):
  		
