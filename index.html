@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Google // Leaflet</title>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+	<script src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script>
+	<script src="layer/tile/Google.js"></script>
+</head>
+<body>
+	<!-- define a DIV into which the map will appear. Make it take up the whole window -->
+	<div style="width:100%; height:100%" id="map"></div>
+	<script type='text/javascript'>
+		
+		// Leaflet map 
+		var map = new L.Map( 'map', {
+			center: new L.LatLng( 53.9618, 58.4277 ), 
+			zoom: 13
+		} );
+
+		// Possible types: SATELLITE, ROADMAP, HYBRID, TERRAIN
+		var google_sat = new L.Google();
+		// "ROADMAP"
+		var google_road = new L.Google( 'ROADMAP' );
+		// "HYBRID"
+		var google_hybrid = new L.Google( 'HYBRID' );
+		// "TERRAIN"
+		var google_terrain = new L.Google( 'TERRAIN' );
+
+		// OSM
+		var osm = new L.TileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' );		
+		
+		// Add layer
+		map.addLayer( google_terrain );
+
+		// Add map control
+		map.addControl( new L.Control.Layers( {
+			'Google Road':google_road,
+			'Google Satellite':google_sat, 
+			'Google Hybrid':google_hybrid,
+			'Google Terrain':google_terrain,
+			'OSM':osm
+		}, {} ) );
+
+	</script>
+ 
+</body>
+</html>
